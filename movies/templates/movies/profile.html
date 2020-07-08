@@ -1,0 +1,14 @@
+{% extends "layout/basic.html" %}
+{% load bootstrap4 %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+    <div class="container">
+    <h2>Profile of user - {{ user.username }}</h2>
+    {% if user.first_name and user.last_name %}
+    <p>Hello, {{ user.first_name }}  {{ user.last_name }}!</p>
+    {% else %}
+    <p>Hello!</p>
+    {% endif %}
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a style="color: red" href="{% url 'profile_change' %}">Change your personal information</a></button>
+    </div>
+{% endblock %}

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>KINOHALLkz</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <style type="text/css">
+    .logo {
+      width: 50px;
+      height: 50px;
+    }
+    body {
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    .autho {
+      text-align: right;
+      color: #000000;
+    }
+    .carousel-inner {
+      height: 500px;
+     }
+    .carousel-inner img {
+    transform: translateY(-10%);
+    width: 100%;
+    height: 100%;
+    }
+    .postersphoto {
+      height: 300px;
+      width: 200px;
+    }
+    /* Footer */
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+section {
+    padding: 60px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#footer {
+    background: #007b5e !important;
+}
+#footer h5{
+  padding-left: 10px;
+    border-left: 3px solid #eeeeee;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    color:#ffffff;
+}
+#footer a {
+    color: #ffffff;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+#footer ul.social li{
+  padding: 3px 0;
+}
+#footer ul.social li a i {
+    margin-right: 5px;
+  font-size:25px;
+  -webkit-transition: .5s all ease;
+  -moz-transition: .5s all ease;
+  transition: .5s all ease;
+}
+#footer ul.social li:hover a i {
+  font-size:30px;
+  margin-top:-10px;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a{
+  color:#ffffff;
+}
+#footer ul.social li a:hover{
+  color:#eeeeee;
+}
+#footer ul.quick-links li{
+  padding: 3px 0;
+  -webkit-transition: .5s all ease;
+  -moz-transition: .5s all ease;
+  transition: .5s all ease;
+}
+#footer ul.quick-links li:hover{
+  padding: 3px 0;
+  margin-left:5px;
+  font-weight:700;
+}
+#footer ul.quick-links li a i{
+  margin-right: 5px;
+}
+#footer ul.quick-links li:hover a i {
+    font-weight: 700;
+}
+
+@media (max-width:767px){
+  #footer h5 {
+    padding-left: 0;
+    border-left: transparent;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+#login .container #login-row #login-column #login-box {
+  margin-top: 120px;
+  max-width: 600px;
+  height: 320px;
+  border: 1px solid #9C9C9C;
+  background-color: #EAEAEA;
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -85px;
+}
+}
+
+  </style>
+
+</head>
+<body >
+  <!-- Navigation part -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <a class="navbar-brand" href="index.html" >Kinohallkz</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Movies
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Komedia</a>
+            <a class="dropdown-item" href="#">Top100</a>
+          </div>
+        </li>
+       <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Tv Series
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Top50</a>
+            <a class="dropdown-item" href="#">Top100</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Animated films
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Etc
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">About us</a>
+            <a class="dropdown-item" href="contacts.html">Contacts</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Name of movie" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+     <ul class="navbar-nav">
+         <li class="nav autho">
+          <a class="nav-link" href="login.html">Log in</a>
+          </li>
+         <li class="nav autho">
+          <a class="nav-link" href="signup.html">Sign up</a>
+          </li>
+     </ul>
+</nav>
+<!-- Main -->
+<div><br></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-9">
+        <div class="row">
+          <div class="col-3">
+            <img src="img/posters/photo3.jpg" style="width: 200px; height: 300px">
+          </div>
+          <div class="col-9">
+            <div class="row">
+              <div class="col-3">
+                <h4>Title:</h4>
+                <h4>Year:</h4>
+                <h4>Country:</h4>
+                <h4>Gender:</h4>
+                <h4>Time:</h4>
+                <h4>Producer:</h4>
+              </div>
+              <div class="col-9">
+                <h4 style="color: #73a9ff">Lion king</h4>
+                <h4><small>2019</small></h4>
+                <h4><small>USA</small></h4>
+                <h4><small>Animated</small></h4>
+                <h4><small>2 hour 04 min</small></h4>
+                <h4><small>Aian SEND</small></h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <br>
+          <p>The animated film “The Lion King” is a remake of the 1994 animated film of the same name and tells about the adventures of a brave lion cub named Simba, who happened to be born and grow up on the expanses of the African savannah. The wise and strong lion of Mufas is the king of pride, and his son Simba is the direct heir</p>
+          <br>
+          <p>The brother of the lion king, Scar, dreams of taking his place and does everything possible for this. One day, Mufasa dies, and the baby Simba was expelled from the lands of the pride by the proclaimed King Scar. Ahead of the lion cub awaits many exciting and dangerous adventures, as well as a return to their native lands in order to return their rightful throne.</p>
+        </div>
+        <br>
+        <div>
+          <!-- Вставляете в место, где должен быть плеер -->
+          <div id="yohoho" data-title="Тайна Коко"></div>
+          
+        </div> 
+      </div>
+      <div class="col-3">
+        Interesting
+      </div>
+    </div>
+  </div>
+ 
+    <!-- footer -->
+  <section id="footer">
+    <div class="container">
+      <div class="row text-center text-xs-center text-sm-left text-md-left">
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <h5>Quick links</h5>
+          <ul class="list-unstyled quick-links">
+            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
+            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Movies</a></li>
+            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Tv Series</a></li>
+            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About us</a></li>
+            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Contacts</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <h5>Quick links</h5>
+          <ul class="list-unstyled quick-links">
+            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
+            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
+            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <h5>Contacts</h5>
+          <ul class="list-unstyled quick-links">
+            <li><a href="">+77776660000</a></li>
+            <li><a href="">kinohall@gmail.com</a></li>
+            <li><a href="">Almaty, Manas street, 16999</a></li>
+            <li><a href=""><img src="img/logos/instalogo.png" class="logo"></a><a href=""><img src="img/logos/facebooklogo.png" class="logo"></a></li>            
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        </hr>
+      </div>  
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+          <p>This site created by Miras Kaldykhan for SDP</p>
+          <p class="h6">&copy All right Reversed. Kinohallkz</p>
+        </div>
+        </hr>
+      </div>  
+    </div>
+  </section>
+  <!-- footer ended -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="//yohoho.cc/yo.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!-- Main -->
+{% extends "layout/basic.html" %}
+{% load bootstrap4 %}
+{% block title %}{{ current_gender.name }}{% endblock %}
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-9">
+        <div class="row">
+          <div class="col-3">
+            <img src="{{ current_movie.linkposter }}" style="width: 200px; height: 300px">
+          </div>
+          <div class="col-9">
+            <div class="row">
+              <div class="col-3">
+                <h4>Title:</h4>
+                <h4>Year:</h4>
+                <h4>Country:</h4>
+                <h4>Genre:</h4>
+                <h4>Time:</h4>
+                <h4>Producer:</h4>
+              </div>
+              <div class="col-9">
+                <h4 style="color: #73a9ff"><small>{{ current_movie.title }}</small></h4>
+                <h4><small>{{ current_movie.year }}</small></h4>
+                <h4><small>{{ current_movie.country }}</small></h4>
+                  <h4><small><a href="{% url 'by_gender' current_movie.gender.pk %}">{{ current_movie.gender }}</a></small></h4>
+                <h4><small>{{ current_movie.time }}</small></h4>
+                <h4><small>{{ current_movie.producer }}</small></h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+            <h3>About the film - {{ current_movie.title }}</h3>
+              <p>{{ current_movie.aboutthefilm }}</p>
+          </div>
+        <br>
+        <div>
+          <!-- Вставляете в место, где должен быть плеер -->
+          <div id="yohoho" data-kinopoisk="{{ current_movie.linkname }}"></div>
+          
+        </div>
+          <br>
+          <h4 class="mt-5">New Comment</h4>
+          <form method="post">
+              {% csrf_token %}
+              {% bootstrap_form form layout='horizontal' %}
+              {% buttons submit='Add' %}{% endbuttons %}
+           </form>
+          {% if comments %}
+          <div class="mt-5">
+              {% for comment in comments %}
+              <div class="my-2 p-2 border">
+                <h5>{{ comment.author }}</h5>
+                <p>{{ comment.content }}</p>
+                <p class="text-right font-italic">{{ comment.created_at }}</p>
+              </div>
+              {% endfor %}
+          </div>
+      {% endif %}
+
+      </div>
+      <div style="text-align: center" class="col-3">
+          <h3>Interesting Movies</h3>
+              {% for m in mov %}
+            <a href="{% url 'moviepage' m.pk %}">
+                  <img src="{{ m.linkposter }}" class="postersphoto">
+                </a>
+                <h5 style="text-align: center">{{ m.title }}</h5>
+            <br>
+              {% endfor %}
+          </div>
+    </div>
+  </div>
+{% endblock %}

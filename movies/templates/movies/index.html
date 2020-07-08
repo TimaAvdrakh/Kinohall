@@ -1,0 +1,92 @@
+{% extends "layout/basic.html" %}
+{% block content %}
+<div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+          {% for mm in nns %}
+              {% if forloop.counter == 1 %}
+        <div class="carousel-item active">
+        {% else %}
+            <div class="carousel-item">
+            {% endif %}
+          <a href="{% url 'moviepage' mm.pk %}">
+          <img class="d-block w-100" src="{{ mm.linkslider }}" alt="First slide" >
+          </a>
+        </div>
+              {% if forloop.counter == 3 %}
+              {{ forloop|linebreaks }}
+              {% endif %}
+{#        <div class="carousel-item">#}
+{#          <a href="#">#}
+{#          <img class="d-block w-100" src="img/sliders/slider2.jpg" alt="Second slide">#}
+{#          </a>#}
+{#        </div>#}
+{#        <div class="carousel-item">#}
+{#          <a href="#">#}
+{#          <img class="d-block w-100" src="img/sliders/slider3.jpg" alt="Third slide">#}
+{#          </a>#}
+{#        </div>#}
+          {% endfor %}
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+    <br> 
+    <!-- Main part -->
+    <div class="container">
+      <div class="row">
+          <div style="text-align: center" class="col-9">
+          <h3>Movies</h3>
+            <div class="row">
+                {% for mm in mms %}
+              <div class="col-3" >
+                <a href="{% url 'moviepage' mm.pk %}" class ="to_animate">
+                  <img src="{{ mm.linkposter }}" class="postersphoto">
+                </a>
+                <h5 style="text-align: center">{{ mm.title }}</h5>
+              </div>
+                {% endfor %}
+            </div>
+          <div style="text-align: center">
+              {% if page.has_previous %}
+              <a href="?page={{ page.previous_page_number }}">&lt;</a>
+              &nbsp;&nbsp;|&nbsp;&nbsp;
+              {% endif %}
+              №{{ page.number }} page out of {{ page.paginator.num_pages }} pages
+              {% if page.has_next %}
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+              <a href="?page={{ page.next_page_number }}">&gt;</a>
+              {% endif %}
+          </div>
+
+          </div><!-- /.col-9 -->
+          <div style="text-align: center" class="col-3">
+          <h3>Serials</h3>
+              {% for series in serials %}
+            <a href="{% url 'seriespage' series.pk %}">
+                  <img src="{{ series.linkposter }}" class="postersphoto">
+                </a>
+                <h5 style="text-align: center">{{ series.title }}</h5>
+            <br>
+              {% endfor %}
+          </div><!-- /.col-3 -->
+
+        </div><!-- /.row -->
+    </div>
+    <br>
+    <!-- Main part end -->
+
+
+{% endblock %}

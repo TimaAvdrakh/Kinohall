@@ -1,0 +1,14 @@
+{% extends "layout/basic.html" %}
+{% load bootstrap4 %}
+
+{% block title %}{{ user.username }}{% endblock %}
+{% block content %}
+    <div class="container">
+    <h2>Personal data of - {{ user.username }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form layout='horizontal' %}
+        {% buttons submit='Save' %}{% endbuttons %}
+    </form>
+    </div>
+{% endblock %}

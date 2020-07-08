@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset= UTF-8">
+    <title>{{ current_gender.name }} - Movies</title>
+</head>
+<body>
+        <h1>Movies</h1>
+        <h2>Gender : {{ current_gender.name }}</h2>
+        <div>
+            <a href="{% url 'index' %}">Main</a>
+            {% for gender in genders %}
+            <a href="{% url 'by_gender' gender.pk %}">{{ gender.name }}</a>
+            {% endfor %}
+        </div>
+        {% for mm in mms %}
+        <div>
+            <h2>{{ mm.title }}</h2>
+            <p>{{ mm.year }}</p>
+            <p>{{ mm.published|date:"d.m.Y H:i:s" }}</p>
+        </div>
+        {% endfor %}
+</body>
+</html>

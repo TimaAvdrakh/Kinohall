@@ -1,0 +1,38 @@
+{% extends 'layout/basic.html' %}
+{% block title %}Search Results{% endblock %}
+{% block content %}
+    <h1 style="text-align: center">Search Results</h1>
+    <br>
+    {% if object_list %}
+        <div class="container">
+      <div class="row">
+          <div class="col-9">
+            <div class="row">
+                {% for mm in object_list %}
+              <div class="col-3">
+                <a href="{% url 'moviepage' mm.pk %}">
+                  <img src="{{ mm.linkposter }}" class="postersphoto">
+                </a>
+                <h5 style="text-align: center">{{ mm.title }}</h5>
+              </div>
+                {% endfor %}
+            </div>
+          </div><!-- /.col-9 -->
+
+          <div style="text-align: center" class="col-3">
+          <h3>Interesting Movies</h3>
+              {% for m in mov %}
+            <a href="{% url 'moviepage' m.pk %}">
+                  <img src="{{ m.linkposter }}" class="postersphoto">
+                </a>
+                <h5 style="text-align: center">{{ m.title }}</h5>
+            <br>
+              {% endfor %}
+          </div><!-- /.col-3 -->
+        </div><!-- /.row -->
+    </div>
+    <br>
+        {% else %}
+        <h3 style="text-align: center">Films with this name haven't</h3>
+    {% endif %}
+{% endblock %}

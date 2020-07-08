@@ -1,0 +1,74 @@
+{% extends 'layout/basic.html' %}
+{% block title %}Sign up{% endblock %}
+{% block content %}
+    <!-- Main part -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+<div class="container">
+
+<hr>
+{#<div class="card bg-light">#}
+{#<article class="card-body mx-auto" style="max-width: 400px;">#}
+{#  <h4 class="card-title mt-3 text-center">Create Account</h4>#}
+{#  <p class="text-center">Get started with your free account</p>#}
+{##}
+{##}
+{#  <form method="post">#}
+{#      {% csrf_token %}#}
+{#  <div class="form-group input-group">#}
+{#    <div class="input-group-prepend">#}
+{#        <span class="input-group-text"> <i class="fa fa-user"></i> </span>#}
+{#     </div>#}
+{#        {{ form.username }}#}
+{#    </div> <!-- form-group// -->#}
+{#    <div class="form-group input-group">#}
+{#      <div class="input-group-prepend">#}
+{#        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>#}
+{#     </div>#}
+{#        {{ form.email }}#}
+{#    </div> <!-- form-group// -->#}
+{##}
+{#    <div class="form-group input-group">#}
+{#      <div class="input-group-prepend">#}
+{#        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>#}
+{#    </div>#}
+{#        {{ form.password1 }}#}
+{#    </div> <!-- form-group// -->#}
+{#    <div class="form-group input-group">#}
+{#      <div class="input-group-prepend">#}
+{#        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>#}
+{#    </div>#}
+{#        {{ form.password2 }}#}
+{#    </div> <!-- form-group// -->#}
+{#    <div class="form-group">#}
+{#        <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>#}
+{#    </div>#}
+{#      <!-- form-g roup// -->#}
+{#    {% for error in form.errors %}#}
+{#        <p class="text-center" style="color: red">You have error</p>#}
+{#      {% endfor %}#}
+{#    <p class="text-center">Have an account? <a href="{% url 'login' %}">Log In</a> </p>#}
+{#</form>#}
+{#</article>#}
+{#</div> <!-- card.// -->#}
+ <h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+{#   {% for error in field.errors %}#}
+{#          <p style="color: red">{{ error }}</p>#}
+{#        {% endfor %}#}
+  {% if form.errors %}
+      <p style="color: red;">Your username and password didn't match. Please try again.</p>
+  {% endif %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+      </p>
+    {% endfor %}
+    <button type="submit">Sign up</button>
+  </form>
+{% endblock %}

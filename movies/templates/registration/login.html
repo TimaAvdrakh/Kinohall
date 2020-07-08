@@ -1,0 +1,72 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta http-equiv="Content-Type"#}
+{#          content="text/html; charset=utf-8">#}
+{#    <title>{% block title %}Main{% endblock %} - Kinohall</title>#}
+{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">#}
+{##}
+{#</head>#}
+{#<body style="background-color: #333333;">#}
+{# <!-- Main part -->#}
+{# <h2 style="text-align: center"><a href="{% url 'index' %}" style="color: #00bef2;">Home</a></h2>#}
+{#    <div id="login">#}
+{#        <div class="container">#}
+{#        <br>#}
+{#        <br>#}
+{#            {% if user.is_authenticated %}#}
+{#                         <h3 style="text-align: center">You already logined</h3>#}
+{#                         {% else %}#}
+{#            <div id="login-row" class="row justify-content-center align-items-center">#}
+{#                <div id="login-column" class="col-md-6">#}
+{#                    <div id="login-box" class="col-md-12">#}
+{#                        <form id="login-form" class="form" action="" method="post">#}
+{#                            <h3 class="text-center text-info">Authorization</h3>#}
+{#                            {% csrf_token %}#}
+{#                            <br>#}
+{#                            <div class="form-group" style="text-align: center">#}
+{#                                {% if form.errors %}#}
+{#                                <p style="color: red;">Your username and password didn't match. Please try again.</p>#}
+{#                                {% endif %}#}
+{#                                <p style="color: white;">Username: {{ form.username }}</p>#}
+{#                            </div>#}
+{#                            <div class="form-group" style="text-align: center">#}
+{#                                <p style="color: white;">Password: {{ form.password }}</p>#}
+{#                            </div>#}
+{#                            <div class="form-group" style="text-align: center">#}
+{#                                <br>#}
+{#                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Enter">#}
+{#                            </div>#}
+{#                            <div id="register-link" style="text-align: center">#}
+{#                                <a href="{% url 'register' %}" class="text-info">Register here</a>#}
+{#                                <a href="#"  style="color: red"> Don't remember password?</a>#}
+{#                            </div>#}
+{#                        </form>#}
+{#                        {% endif %}#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    <br>#}
+{##}
+{#     <!-- card.// -->#}
+{#</body>#}
+{#</html>#}
+
+{% extends "layout/basic.html" %}
+{% load bootstrap4%}
+{% block title %}Login{% endblock %}
+{% block content %}
+    <h2>Login</h2>
+    {% if user.is_authenticated %}
+        <p>You already logined</p>
+        {% else %}
+        <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form form layout='horizontal' %}
+            <input type="hidden" name="next" value="{{ next }}">
+            {% buttons submit='Login' %}{% endbuttons %}
+        </form>
+    {% endif %}
+{% endblock %}
